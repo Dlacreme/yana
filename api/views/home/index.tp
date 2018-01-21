@@ -1,0 +1,56 @@
+{{define "title"}}Blueprint{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+
+	<h1>Documentation</h1>
+	<hr />
+	<input id="search" type="text" class="form-control"  />
+
+	<div>
+		<h2>
+			Core
+			<span class="pull-right"><button class="btn btn-primary" data-toggle="collapse" href="#corecontent">||</button></span>
+		</h2>
+		
+		<div id="corecontent" class="part collapse in">
+		<h3>Session</h3>
+
+		<div class="card">
+			<h4>Sign In</h4>
+			<div class="description">
+				Create an account
+			</div>
+		</div>
+
+		<div class="card">
+			<h4>Log In</h4>
+			<div class="description">
+				Log a user using credential
+			</div>
+		</div>
+
+		<div class="card">
+			<h4>Log Out</h4>
+			<div class="description">
+				Log Out a user
+			</div>
+		</div>
+	</div>
+
+	<h2>PSO</h2>
+	
+	<h3>Stocks</h3>
+
+	<h3>Orders</h3>
+
+
+	<h2>Social</h2>
+		
+	<h3>Articles</h3>
+
+	<h3>Events</h3>
+
+	<h3>Tags</h3>
+
+{{end}}
+{{define "foot"}}{{end}}

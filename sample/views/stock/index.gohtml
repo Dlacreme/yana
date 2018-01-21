@@ -1,0 +1,32 @@
+{{define "title"}}Stock{{end}}
+{{define "head"}} {{end}}
+{{define "content"}}
+
+<table class="table">
+<thead><tr>
+    <th>#</th>
+    <th>Name (type)</th>
+    <th>Category</th>
+    <th>Format</th>
+    <th>Size</th>
+    <th>Quantity</th>
+</tr></thead>
+<tbody>
+{{ range $key, $value := .model }}
+<tr>
+    <td>{{ $value.StockId }}</td>
+    <td>{{ $value.Label }} - {{ $value.TypeLabel }}</td>
+    <td>{{ $value.CategoryLabel }}</td>
+    <td>{{ $value.FormatLabel }}</td>
+    <td>{{ $value.Size }}</td>
+    <td>{{ $value.Quantity }}</td>        
+<tr/>
+{{ end }}
+</tbody>
+</table>
+{{end}}
+
+{{define "foot"}}
+<button class="btn btn-success" onclick="Dynamo.Forward.Display('#update-template')"><i class="fa fa-plus"></i>&nbsp;&nbsp;New Import</button>
+<a class="btn btn-primary float-right" href="/static/file/yana-import.csv"><i class="fa fa-download"></i>&nbsp;&nbsp;Download Template</a>
+{{end}}

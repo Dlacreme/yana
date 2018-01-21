@@ -1,0 +1,15 @@
+{{define "content"}}
+<div id="update-template">
+    <h4>Import stocks</h4>
+    <form method="POST" action="/stock/import" enctype="multipart/form-data">
+    <div>
+        <input type="file" name="file" accept=".csv" />
+        <div class="info">Only csv files are accepted</div>
+    </div>
+
+    <div class="forward-footer">
+        <button type="submit" class="btn btn-primary">Import</button>
+    </div>
+    </form>
+</div>
+{{end}}

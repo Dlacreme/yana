@@ -1,0 +1,13 @@
+{{define "title"}}{{.error.Code}}{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+
+	<div id="status-error-container">
+	<div class="page-header">
+		<h1>{{.error.Message| NOESCAPE}}</h1>
+	</div>
+	<p>Click {{LINK "" "here"}} to go to the home page.</p>
+	</div>
+
+{{end}}
+{{define "foot"}}{{end}}

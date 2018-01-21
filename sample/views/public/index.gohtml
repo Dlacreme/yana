@@ -1,0 +1,22 @@
+{{define "title"}}Welcome{{end}}
+{{define "head"}} {{end}}
+{{define "content"}}
+<div id="public">
+    &nbsp;
+    <h1>Yana</h1>
+
+    <div class="container">
+    {{if .user}}
+		<a href="/dashboard">Go to dashboard</a>
+    {{else}}
+        <form action="/login" method="POST" class="row">
+            <input class="form-control col-md-4" type="text" name="email" />
+            <input class="form-control col-md-4" type="text" name="password" />
+            <input class="btn btn-outline-primary" type="submit" />
+        </form>
+    {{end}}
+
+    </div>
+</div>
+{{end}}
+{{define "foot"}} {{end}}

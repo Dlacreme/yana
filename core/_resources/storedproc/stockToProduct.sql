@@ -1,0 +1,10 @@
+USE yana;
+
+DELIMITER //
+CREATE PROCEDURE StockToProduct()
+BEGIN
+
+    SELECT * FROM User;
+
+END //
+DELIMITER ;

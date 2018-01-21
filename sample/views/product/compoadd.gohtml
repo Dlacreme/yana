@@ -1,0 +1,22 @@
+{{define "content"}}
+
+<form class="container" method="POST" action="/product/addcompo/{{.model.ProductId}}">
+    <h4 id="productTitle">Add product to {{ .model.Label }}</h4>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>Stock</label>
+            <select  placeholder="Pick type" class="selecttwo" name="stock" aria-describedby="label-type" data-url="/list/stock" style="width:100%"></select>
+        </div>
+        <div class="col-md-6">
+            <label>Quantity</label>
+            <input type="number" name="quantity" class="form-control" />
+        </div>
+    </div>
+
+    <div class="forward-footer">
+        <button type="submit" class="btn btn-success">Add Product</button>
+    </div>
+</form>
+
+{{end}}

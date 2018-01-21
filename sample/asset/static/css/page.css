@@ -1,0 +1,23 @@
+#public {
+    background-image: url('/static/img/bar-cocktail.jpg');
+    height: 100%;
+    text-align: center;
+    color: #494950;
+}
+
+#public h1 {
+    margin-top: 10%;
+    font-size: 70px;
+}
+
+form .input-group-addon {
+    min-width: 80px;
+}
+
+form .input-group {
+    margin-bottom: 8px;
+}
+.product-item {
+    border-left: 3px solid #ccc;
+    padding: 3px 10px;
+}

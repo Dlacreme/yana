@@ -1,0 +1,49 @@
+h2 {
+    border-bottom: 1px inset #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+.card {
+    background-color: #ececec;
+    padding: 20px 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.card h4 {
+    margin: 0 0 10px 5px;
+}
+
+.params {
+    margin-top: 10px;
+    display: flex;
+}
+
+.input {
+    flex: 1;
+    background-color: #3a3a3a;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    margin-right: 3px;
+}
+
+.output {
+    flex: 1;
+    background-color: #3a3a3a;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    margin-left: 3px;
+}
+
+.part {
+    border-left: 3px solid #ccc;
+    padding-left: 10px;
+}

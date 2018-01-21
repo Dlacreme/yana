@@ -1,0 +1,52 @@
+{{define "title"}}Stock{{end}}
+{{define "head"}} {{end}}
+{{define "content"}}
+
+<table class="table">
+<thead><tr>
+    <th class="th-id">#</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Type</th>
+    <th class="th-action">Action</th>
+</tr></thead>
+<tbody>
+{{ range $key, $value := .model }}
+<tr id="pdt-{{$value.ProductId}}">
+    <td>{{ $value.ProductId }}</td>
+    <td>{{ $value.Label }}</td>
+    <td>{{ $value.Price }}</td>
+    <td>{{ $value.Type }}</td>
+    <td>
+        <button onclick="Dynamo.Forward.Ajax('/product/edit/{{ $value.ProductId }}')" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button>
+        <button class="btn btn-sm btn-primary" data-toggle="collapse" data-target="#compo-{{$value.ProductId}}"><i class="fa fa-eye"></i></button>
+        <button data-validation="Dynamo.Forward.Html('/product/remove/{{$value.ProductId}}');Dynamo.Html.RemoveElem($('#pdt-{{$value.ProductId}}'))" class="btn btn-sm btn-warning"><i class="fa fa-trash"></i></button>
+    </td>
+<tr/>
+<tr id="compo-{{$value.ProductId}}" class="hidden product-compo">
+    <td colspan="4">
+    <h5>Composition details</h5>
+    {{ range $keyCompo, $compo := $value.Composition }}
+        {{ if gt $compo.StockId 0 }}
+        <div id="pdtstock-{{$compo.ProductStockId}}" class="hover"> {{ $compo.RequiredQuantity }} : {{ $compo.Label }} <button data-validation="Dynamo.Forward.Html('/product/removecompo/{{$compo.ProductStockId}}');Dynamo.Html.RemoveElem($('#pdtstock-{{$compo.ProductStockId}}'))" class="btn btn-sm btn-warning float-right"><i class="fa fa-trash"></i></button></div>
+        {{ else}}
+        <div class="info">No stock link to this product.</div>
+        {{ end }}
+    {{ end }}
+    </td>
+    <td colspan="1">
+        <button onclick="Dynamo.Forward.Ajax('/product/addcompo/{{ $value.ProductId }}')" class="btn btn-sm btn-success"><i class="fa fa-plus"></i></button>        
+    </td> 
+</tr>
+{{ end }}
+</tbody>
+</table>
+
+
+{{end}}
+{{define "foot"}}
+
+<div id="create" class="preload" data-url="/product/create"></div>
+<button class="btn btn-success" onclick="Dynamo.Forward.Template('create')"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create Product</button>
+
+{{end}}

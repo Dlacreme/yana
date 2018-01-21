@@ -1,0 +1,40 @@
+{{define "content"}}
+
+<div id="update-template">
+    <h4>Create Product</h4>
+    <form method="POST" action="/product/create">
+        <div class="row">
+        <div class="col-md-4">
+            <label>Name</label>
+            <input placeholder="Product Name" id="name" name="label" type="text" class="form-control">
+        </div>
+
+        <div class="col-md-4">
+            <label>Price</label>
+            <input placeholder="Product Price" id="price" name="price" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label>Type</label>         
+            <select  placeholder="Pick type" id="type" class="selecttwo" name="type" aria-describedby="label-type" data-url="/list/producttype" style="width:100%">
+            </select>
+        </div>
+
+        <div data-control="#name" data-format="[A-Za-z0-9]+" class="form-alert alert hidden">
+            <strong>Warning!</strong> Please enter your full name
+        </div>
+        <div data-control="#price" data-format="[0-9.]+" class="form-alert alert hidden">
+            <strong>Warning!</strong> Please enter correct price
+        </div>
+        <div data-control="#type" data-format="select2" class="form-alert alert hidden">
+            <strong>Warning!</strong> Please pick a category
+        </div>
+
+        <div class="forward-footer">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div> 
+        </div>
+
+    </form>
+</div>
+
+{{end}}

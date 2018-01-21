@@ -1,0 +1,35 @@
+{{define "content"}}
+
+<div id="edit-template">
+    <h4 id="productTitle">Create Product</h4>
+    <form method="POST" action="/product/edit/{{.model.ProductId}}">
+        <input type="text" name="productId" id="productId" value="{{ .model.ProductId }}" class="hidden" />
+        <div class="row">
+        <div class="col-md-4">
+            <label>Name</label>
+            <input placeholder="Product Name" id="productLabel" name="label" type="text" value="{{ .model.Label }}" class="form-control">
+        </div>
+
+        <div class="col-md-4">
+            <label>Price</label>
+            <input placeholder="Product Price" id="productPrice" name="price" type="text" value="{{ .model.Price }}" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label>Type</label>         
+            <select  placeholder="Pick type" id="productType" class="selecttwo" name="type" data-value="{{.model.TypeId}}|{{.model.Type}}" data-url="/list/producttype" style="width:100%">
+            </select>
+        </div>
+
+        <div>
+            
+        </div>
+
+        <div class="forward-footer">
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>  
+        </div>
+    </form>
+
+</div>
+
+{{end}}
